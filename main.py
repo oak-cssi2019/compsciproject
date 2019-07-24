@@ -2,6 +2,7 @@
 import webapp2
 import jinja2
 import os
+import random
 
 # this initializes the jinja2 environment
 the_jinja_env = jinja2.Environment(
@@ -18,12 +19,17 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
 <<<<<<< HEAD
+        about_template = the_jinja_env.get_template('templates/about.html')
+        self.response.write(about_template.render())
+=======
+<<<<<<< HEAD
         pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
         self.response.write(pastAnswers_template.render())
 =======
         about_template = the_jinja_env.get_template('templates/pastAnswers.html')
         self.response.write(about_template.render())
 >>>>>>> f06dc6d7b4a2524bbda4ee621d64a924ba639161
+>>>>>>> 61680e9515e75ee28e9f88fc314f5d56e3eadd42
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
@@ -40,7 +46,41 @@ class AboutHandler(webapp2.RequestHandler):
         }
         results_template = the_jinja_env.get_template('templates/About.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
+<<<<<<< HEAD
+
+def errorMessage():
+
+    errorArray = ["The database can't answer your question right now",
+    "I must've been on break when I missed this",
+    "error: 101",
+    "Ask me a better question * yawn *",
+    "Someone hasn't been treating their agent very well :/",
+    "I think I lost your file on that"]
+    randomError = random.choice(errorArray)
+    return randomError
+
+def ansPhrase():
+
+    myPhrase = "FBI agent, check your records to answer us"
+    testerString = "Cat and Dog"
+    if "." in testerString:
+        startIndexVal = testerString.find(".")
+        endIndexVal = len(testerString) - 1
+        savePortion = testerString[startIndexVal:endIndexVal]
+        return savePortion
+
+    else:
+        return errorMessage()
+
+
+
+
+
+
+
+=======
 >>>>>>> f06dc6d7b4a2524bbda4ee621d64a924ba639161
+>>>>>>> 61680e9515e75ee28e9f88fc314f5d56e3eadd42
 
 # the routes / app configuration section
 app = webapp2.WSGIApplication([
