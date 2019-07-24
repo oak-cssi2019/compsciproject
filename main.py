@@ -10,6 +10,11 @@ the_jinja_env = jinja2.Environment(
   autoescape=True)
 
 # the handler section
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        login_template = the_jinja_env.get_template('templates/login.html')
+        self.response.write(login_template.render())
+
 class HomeHandler(webapp2.RequestHandler): #homepage "/"
     def get(self):
         home_template = the_jinja_env.get_template('templates/home.html') #pulls in "home.html" template
@@ -18,7 +23,7 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         about_template = the_jinja_env.get_template('templates/about.html')
-        self.response.write(about_template.render())  
+        self.response.write(about_template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
@@ -33,7 +38,8 @@ class ResultsHandler(webapp2.RequestHandler):
 
 # the routes / app configuration section
 app = webapp2.WSGIApplication([
-  ('/', HomeHandler),
+  ('/', LoginHandler),
+  ('/home', HomeHandler),
   ('/about', AboutHandler),
   ('/results', ResultsHandler),
   ], debug=True)
