@@ -2,6 +2,7 @@
 import webapp2
 import jinja2
 import os
+import random
 
 # this initializes the jinja2 environment
 the_jinja_env = jinja2.Environment(
@@ -18,7 +19,7 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         about_template = the_jinja_env.get_template('templates/about.html')
-        self.response.write(about_template.render())  
+        self.response.write(about_template.render())
 
 class ResultsHandler(webapp2.RequestHandler):
     def get(self):
@@ -29,6 +30,36 @@ class ResultsHandler(webapp2.RequestHandler):
         }
         results_template = the_jinja_env.get_template('templates/results.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
+
+def errorMessage():
+
+    errorArray = ["The database can't answer your question right now",
+    "I must've been on break when I missed this",
+    "error: 101",
+    "Ask me a better question * yawn *",
+    "Someone hasn't been treating their agent very well :/",
+    "I think I lost your file on that"]
+    randomError = random.choice(errorArray)
+    return randomError
+
+def ansPhrase():
+
+    myPhrase = "FBI agent, check your records to answer us"
+    testerString = "Cat and Dog"
+    if "." in testerString:
+        startIndexVal = testerString.find(".")
+        endIndexVal = len(testerString) - 1
+        savePortion = testerString[startIndexVal:endIndexVal]
+        return savePortion
+
+    else:
+        return errorMessage()
+
+
+
+
+
+
 
 
 # the routes / app configuration section
