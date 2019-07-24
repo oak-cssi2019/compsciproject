@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="../styles/styles.css">
+  </head>
+  <body>
+    <div id="login_div" class="main_div">
+      <h3>Pyschic Login</h3>
+      <input type="email" placeholder="Email..." id="email_field"/>
+      <input type="password" placeholder="Password..." id="password_field"/>
+      <button onClick="login()">Login to Account</button>
+    </div>
+    <div id="user_div" class="loggedin-div">
+      <h3>Welcome User</h3>
+      <p id="user_para">Welcome to the Pyschic Site! You're currently logged in!</p>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#config-web-app -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyD2WJs6yyrOPcX8Wf_Bi2VIj54CRFbY4b8",
+      authDomain: "pyschic-login.firebaseapp.com",
+      databaseURL: "https://pyschic-login.firebaseio.com",
+      projectId: "pyschic-login",
+      storageBucket: "",
+      messagingSenderId: "990936943520",
+      appId: "1:990936943520:web:b4ad8e012827865c"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="../scripts/script.js"></script>
+  </body>
+</html>
