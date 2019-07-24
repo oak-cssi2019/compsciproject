@@ -1,5 +1,87 @@
 h1 {
-  color: blue;
+
+  padding-top: 58px;
+  font-size: 32px;
+  font-family: monospace;
+  font-weight:bold;
+
+}
+
+
+body {
+
+  font-family: monospace;
+  font-weight:bold;
+  background-color: black; /*#db5646; */
+  background-image: url("https://media0.giphy.com/media/xULW8l2gXuRPmsQe8U/source.gif");
+  background-size: cover;
+  color: white;
+
+
+}
+
+#postion1 {
+
+  font-family: monospace;
+  padding-top: 119px;
+  font-size: 32px;
+}
+
+p{
+  padding-top: 89px;
+  font-size: 22px;
+
+}
+
+
+
+
+/*stuff for loginnb */
+
+input, button{
+  font-family:'Nunito',sans-serif;
+  font-weight: 700;
+}
+
+.main_div, .loggedin-div{
+  width:20%;
+  margin:0px auto;
+  margin-top:150px;
+  padding: 20px;
+}
+
+
+.main_div input {
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  padding: 15px;
+  outline: none;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.main_div input:focus{
+  border:1px solid #999;
+}
+
+.main_div button, .loggedin-div button {
+  background: #5d8ffc;
+  color: #fff;
+  border: 1px solid #5d8ffc;
+  border-radius: 5px;
+  padding:15px;
+  display: block;
+  width:100%;
+
+}
+
+.main_div button:hover, .loggedin-div button:hover{
+  background: #fff;
+  color:#5d8ffc;
+  border: 1px solid #5d8ffc;
+  cursor: pointer;
 }
 
 input, button{
