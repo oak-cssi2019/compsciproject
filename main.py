@@ -16,20 +16,37 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
         home_template = the_jinja_env.get_template('templates/home.html') #pulls in "home.html" template
         self.response.write(home_template.render()) #serves home.html template back to front-end
 
-class AboutHandler(webapp2.RequestHandler):
+class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
+<<<<<<< HEAD
         about_template = the_jinja_env.get_template('templates/about.html')
         self.response.write(about_template.render())
+=======
+<<<<<<< HEAD
+        pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        self.response.write(pastAnswers_template.render())
+=======
+        about_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        self.response.write(about_template.render())
+>>>>>>> f06dc6d7b4a2524bbda4ee621d64a924ba639161
+>>>>>>> 61680e9515e75ee28e9f88fc314f5d56e3eadd42
 
-class ResultsHandler(webapp2.RequestHandler):
+class AboutHandler(webapp2.RequestHandler):
     def get(self):
         # below are the form results from the form on home.html
+<<<<<<< HEAD
+
+        about_template = the_jinja_env.get_template('templates/about.html')
+        self.response.write(about_template.render())
+         #passes in results_Dict that will fill the placeholders on results.html
+=======
         results_Dict = {
           'name': self.request.get('user-first-name'), #stores form input named 'user-first-name' under key 'name' which is the same name as the placeholder on 'results.html'
           'feeling': self.request.get('user-feeling') #stores form input under 'user-feeling' under key 'feeling' which is the same name as the placeholder on 'results.html'
         }
-        results_template = the_jinja_env.get_template('templates/results.html')
+        results_template = the_jinja_env.get_template('templates/About.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
+<<<<<<< HEAD
 
 def errorMessage():
 
@@ -61,12 +78,21 @@ def ansPhrase():
 
 
 
+=======
+>>>>>>> f06dc6d7b4a2524bbda4ee621d64a924ba639161
+>>>>>>> 61680e9515e75ee28e9f88fc314f5d56e3eadd42
 
 # the routes / app configuration section
 app = webapp2.WSGIApplication([
+<<<<<<< HEAD
   ('/', HomeHandler),
+  ('/pastAnswers', pastAnswersHandler),
   ('/about', AboutHandler),
-  ('/results', ResultsHandler),
+=======
+  ('/home', HomeHandler),
+  ('/pastAnswers', pastAnswersHandler),
+  ('/About', AboutHandler),
+>>>>>>> f06dc6d7b4a2524bbda4ee621d64a924ba639161
   ], debug=True)
 
 
