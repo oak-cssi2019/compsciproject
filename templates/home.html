@@ -7,38 +7,42 @@
   </head>
   <body>
     <!-- navbar -->
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
- <a class="navbar-brand">Navbar</a>
- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-   <span class="navbar-toggler-icon"></span>
- </button>
- <div class="collapse navbar-collapse" id="navbarNavDropdown">
-   <ul class="navbar-nav">
-     <li class="nav-item active">
-       <a class="nav-link" href="/About">About<span class="sr-only">(current)</span></a>
-     </li>
-     <li class="nav-item">
-       <a class="nav-link" href="/pastAnswers">Past Answers</a>
-     </li>
-     <li class="nav-item active">
-       <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
-     </li>
-   </ul>
- </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/pastAnswers">Past Answers</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
  <!-- end of nb code -->
     <div>
-    <center>  <h1>I am a virtual FBI agent, Ask me a question</h1></center>
+    <center>
+      <h1>I am a virtual FBI agent, Ask me a question</h1>
 
-      <center> <form id="postion1" method =”post” action="/results">
-        Type in the magic pention<br>
+
+        <form id="postion1" method =”post” action="/answers">
+        Type in the magic petition<br>
         <input type="text" name="user-first-name">
         <br>
       What would you like to know <br>
         <input type="text" name="user-feeling"><br>
-        <input type="submit" value="ask">
+      <button type="submit" value="ask"> Ask Away ! </button>
       </center>
+
 
       <!--  <h2>Visit your <a href="/pastAnswers"> Past answers page to see your old Qs and A's!</a> </h2>  example of how to link to another page -- through it's route -->
         <!-- form data gets processed by "/results." Note the "name" of each input and how it's referenced in the "/results" handler -->

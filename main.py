@@ -2,6 +2,7 @@
 import webapp2
 import jinja2
 import os
+import random
 
 # this initializes the jinja2 environment
 the_jinja_env = jinja2.Environment(
@@ -10,6 +11,11 @@ the_jinja_env = jinja2.Environment(
   autoescape=True)
 
 # the handler section
+class LoginHandler(webapp2.RequestHandler):
+    def get(self):
+        login_template = the_jinja_env.get_template('templates/login.html')
+        self.response.write(login_template.render())
+
 class HomeHandler(webapp2.RequestHandler): #homepage "/"
     def get(self):
         home_template = the_jinja_env.get_template('templates/home.html') #pulls in "home.html" template
@@ -17,24 +23,58 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
-        about_template = the_jinja_env.get_template('templates/pastAnswers.html')
-        self.response.write(about_template.render())
+        pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        self.response.write(pastAnswers_template.render())
+
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         # below are the form results from the form on home.html
-        results_Dict = {
-          'name': self.request.get('user-first-name'), #stores form input named 'user-first-name' under key 'name' which is the same name as the placeholder on 'results.html'
-          'feeling': self.request.get('user-feeling') #stores form input under 'user-feeling' under key 'feeling' which is the same name as the placeholder on 'results.html'
-        }
-        results_template = the_jinja_env.get_template('templates/About.html')
-        self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
+        About_template = the_jinja_env.get_template('templates/about.html')
+        self.response.write(About_template.render()) #passes in results_Dict that will fill the placeholders on results.html
+
+class AnswersHandler(webapp2.RequestHandler):
+    def get(self):
+        Answers_template = the_jinja_env.get_template('templates/answers.html')
+        self.response.write(Answers_template.render())
+
+
+def errorMessage():
+
+    errorArray = ["The database can't answer your question right now",
+    "I must've been on break when I missed this",
+    "error: 101",
+    "Ask me a better question * yawn *",
+    "Someone hasn't been treating their agent very well :/",
+    "I think I lost your file on that"]
+    randomError = random.choice(errorArray)
+    return randomError
+
+def ansPhrase():
+
+    myPhrase = "FBI agent, check your records to answer us"
+    testerString = "Cat and Dog"
+    if "." in testerString:
+        startIndexVal = testerString.find(".")
+        endIndexVal = len(testerString) - 1
+        savePortion = testerString[startIndexVal:endIndexVal]
+        return savePortion
+
+    else:
+        return errorMessage()
+
+
+
+
+
 
 # the routes / app configuration section
 app = webapp2.WSGIApplication([
+  ('/', LoginHandler),
   ('/home', HomeHandler),
-  ('/pastAnswers', pastAnswersHandler),
-  ('/About', AboutHandler),
+  ('/about', AboutHandler),
+  ('/pastAnswers',pastAnswersHandler),
+  ('/answers',AnswersHandler),
   ], debug=True)
 
 
