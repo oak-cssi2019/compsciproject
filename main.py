@@ -3,6 +3,8 @@ import webapp2
 import jinja2
 import os
 import random
+from past_answers_model import Answer_Tracker
+from seed_answers_db import seed_data
 
 # this initializes the jinja2 environment
 the_jinja_env = jinja2.Environment(
@@ -23,20 +25,20 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
-        pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
-        self.response.write(pastAnswers_template.render())
+        seed_data()
+        # pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        # self.response.write(pastAnswers_template.render())
 
 
 class AboutHandler(webapp2.RequestHandler):
     def get(self):
         # below are the form results from the form on home.html
-        About_template = the_jinja_env.get_template('templates/about.html')
-        self.response.write(About_template.render()) #passes in results_Dict that will fill the placeholders on results.html
-
-class AnswersHandler(webapp2.RequestHandler):
-    def get(self):
-        Answers_template = the_jinja_env.get_template('templates/answers.html')
-        self.response.write(Answers_template.render())
+        results_Dict = {
+          'name': self.request.get('user-first-name'), #stores form input named 'user-first-name' under key 'name' which is the same name as the placeholder on 'results.html'
+          'feeling': self.request.get('user-feeling') #stores form input under 'user-feeling' under key 'feeling' which is the same name as the placeholder on 'results.html'
+        }
+        results_template = the_jinja_env.get_template('templates/about.html')
+        self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
 
 
 def errorMessage():
