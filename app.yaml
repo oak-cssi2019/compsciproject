@@ -3,6 +3,8 @@ api_version: 1
 threadsafe: true
 
 handlers:
+- url: /assets
+  static_dir: img
 - url: /styles
   static_dir: styles
 

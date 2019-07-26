@@ -74,7 +74,7 @@ app = webapp2.WSGIApplication([
   ('/', LoginHandler),
   ('/home', HomeHandler),
   ('/about', AboutHandler),
-  ('/pastAnswers',pastAnswersHandler),
+  ('/pastAnswers',pastAnswersHandler)
   ], debug=True)
 
 
