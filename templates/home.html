@@ -35,26 +35,34 @@
       <h1>I am a virtual FBI agent, Ask me a question</h1>
 
 
-        <form id="postion1" method =”post”>
-        Type in the magic petition<br>
-        <input type="text" name="user-first-name">
+
+
+      <center>
+<form>
+        Call in your agent with the special phrase<br>
+        <input type="text" name="petition" id="petition" oninput="secretText()">
+
         <br>
-      What would you like to know <br>
-        <input type="text" name="user-feeling"><br>
-      <button type="submit" value="ask"> Ask Away ! </button>
+      What document would you like to be inspected <br>
+        <input type="text" name="question">
+        <br>
+        <button onclick ="showAnswer()">Submit</button>
+
+      </center>
+</form>
+      <h1 id="answerHolder" name="answerHolder"></h1>
 
 
-  <!--  <h2>Visit your <a href="/pastAnswers"> Past answers page to see your old Qs and A's!</a> </h2>  example of how to link to another page -- through it's route -->
-    <!-- form data gets processed by "/results." Note the "name" of each input and how it's referenced in the "/results" handler -->
-  </form>
-  </center>
-</div>
+      <!--  <h2>Visit your <a href="/pastAnswers"> Past answers page to see your old Qs and A's!</a> </h2>  example of how to link to another page -- through it's route -->
+        <!-- form data gets processed by "/results." Note the "name" of each input and how it's referenced in the "/results" handler -->
 
-<!-- imports all script files including project's script.js file, jQuery, and bootstrap script files -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="../scripts/script.js"></script>
-</body>
-</html>
+    </div>
+
+    <!-- imports all script files including project's script.js file, jQuery, and bootstrap script files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../scripts/script.js"></script>
+    <script src="../scripts/texthandler.js"></script>
+  </body>

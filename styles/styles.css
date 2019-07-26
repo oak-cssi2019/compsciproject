@@ -67,9 +67,9 @@ input, button{
 }
 
 .main_div button, .loggedin-div button {
-  background: #5d8ffc;
+  background: #04BE03;
   color: #fff;
-  border: 1px solid #5d8ffc;
+  border: 1px solid #04BE03;
   border-radius: 5px;
   padding:15px;
   display: block;
@@ -79,58 +79,14 @@ input, button{
 
 .main_div button:hover, .loggedin-div button:hover{
   background: #fff;
-  color:#5d8ffc;
-  border: 1px solid #5d8ffc;
+  color:#04BE03;
+  border: 1px solid #04BE03;
   cursor: pointer;
 }
 
-input, button{
-  font-family:'Nunito',sans-serif;
-  font-weight: 700;
-}
+#answerHolder {
+  display: none;
 
-.main_div, .loggedin-div{
-  width:20%;
-  margin:0px auto;
-  margin-top:150px;
-  padding: 20px;
-}
-
-
-.main_div input {
-  display: block;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background: #fff;
-  padding: 15px;
-  outline: none;
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.main_div input:focus{
-  border:1px solid #999;
-}
-
-.main_div button, .loggedin-div button {
-  background: #5d8ffc;
-  color: #fff;
-  border: 1px solid #5d8ffc;
-  border-radius: 5px;
-  padding:15px;
-  display: block;
-  width:100%;
-  transition: 0.3s;
-  -webkit-transition: 0.3s;
-  -moz-transition:0.3s;
-
-}
-
-.main_div button:hover, .loggedin-div button:hover{
-  background: #fff;
-  color:#5d8ffc;
-  border: 1px solid #5d8ffc;
-  cursor: pointer;
 }
 
 .bg-dark {
