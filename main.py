@@ -40,12 +40,6 @@ class AboutHandler(webapp2.RequestHandler):
         results_template = the_jinja_env.get_template('templates/about.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
 
-class AnswersHandler(webapp2.RequestHandler): #homepage "/"
-    def get(self):
-        home_template = the_jinja_env.get_template('templates/answers.html') #pulls in "home.html" template
-        self.response.write(answers_template.render())
-
-
 def errorMessage():
 
     errorArray = ["The database can't answer your question right now",
@@ -81,7 +75,6 @@ app = webapp2.WSGIApplication([
   ('/home', HomeHandler),
   ('/about', AboutHandler),
   ('/pastAnswers',pastAnswersHandler),
-  ('/answers',AnswersHandler),
   ], debug=True)
 
 
