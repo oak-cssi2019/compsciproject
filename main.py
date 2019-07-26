@@ -4,6 +4,8 @@ import webapp2
 import jinja2
 import os
 import random
+from past_answers_model import Answer_Tracker
+from seed_answers_db import seed_data
 
 # this initializes the jinja2 environment
 the_jinja_env = jinja2.Environment(
@@ -26,9 +28,9 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
 
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
-
-        pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
-        self.response.write(pastAnswers_template.render())
+        seed_data()
+        # pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        # self.response.write(pastAnswers_template.render())
 
 
 class AboutHandler(webapp2.RequestHandler):
@@ -40,7 +42,6 @@ class AboutHandler(webapp2.RequestHandler):
         }
         results_template = the_jinja_env.get_template('templates/about.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
-
 
 def errorMessage():
 
@@ -76,5 +77,5 @@ app = webapp2.WSGIApplication([
   ('/', LoginHandler),
   ('/home', HomeHandler),
   ('/about', AboutHandler),
-  ('/passAnswers', pastAnswersHandler)
+  ('/pastAnswers',pastAnswersHandler)
   ], debug=True)
