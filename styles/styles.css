@@ -83,3 +83,8 @@ input, button{
   border: 1px solid #04BE03;
   cursor: pointer;
 }
+
+#answerHolder {
+  display: none;
+
+}

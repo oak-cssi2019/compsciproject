@@ -1,3 +1,4 @@
+
 # the import section
 import webapp2
 import jinja2
@@ -22,6 +23,8 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
     def get(self):
         home_template = the_jinja_env.get_template('templates/home.html') #pulls in "home.html" template
         self.response.write(home_template.render()) #serves home.html template back to front-end
+
+    
 
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
@@ -76,14 +79,3 @@ app = webapp2.WSGIApplication([
   ('/about', AboutHandler),
   ('/pastAnswers',pastAnswersHandler)
   ], debug=True)
-
-
-
-
-
-
-
-# to spin your server, navigate to your parent folder and run in your terminal:
-# dev_appserver.py app.yaml
-# then go to http://localhost:8080 in your browser
-# to stop your server, in your terminal press  control+C
