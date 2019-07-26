@@ -24,13 +24,13 @@ class HomeHandler(webapp2.RequestHandler): #homepage "/"
         home_template = the_jinja_env.get_template('templates/home.html') #pulls in "home.html" template
         self.response.write(home_template.render()) #serves home.html template back to front-end
 
-    
+
 
 class pastAnswersHandler(webapp2.RequestHandler):
     def get(self):
-        seed_data()
-        # pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
-        # self.response.write(pastAnswers_template.render())
+        # seed_data()
+        pastAnswers_template = the_jinja_env.get_template('templates/pastAnswers.html')
+        self.response.write(pastAnswers_template.render())
 
 
 class AboutHandler(webapp2.RequestHandler):
@@ -42,6 +42,9 @@ class AboutHandler(webapp2.RequestHandler):
         }
         results_template = the_jinja_env.get_template('templates/about.html')
         self.response.write(results_template.render(results_Dict)) #passes in results_Dict that will fill the placeholders on results.html
+
+
+
 
 def errorMessage():
 
