@@ -32,19 +32,23 @@
     <div>
     <center>  <h1>I am a virtual FBI agent, Ask me a question</h1></center>
 
-      <center> <form id="postion1" method =”post” action="/results">
-        Type in the magic pention<br>
-        <input type="text" name="user-first-name">
+      <center>
+
+        Call in your agent with the special phrase<br>
+        <input type="text" name="petition" id="petition" oninput="secretText()">
+
         <br>
-      What would you like to know <br>
-        <input type="text" name="user-feeling"><br>
-        <input type="submit" value="ask">
+      What document would you like to be inspected <br>
+        <input type="text" name="question">
+        <br>
+        <button onclick ="showAnswer()">Submit</button>
       </center>
+      <h1 id="answerHolder" name="answerHolder"></h1>
 
 
       <!--  <h2>Visit your <a href="/pastAnswers"> Past answers page to see your old Qs and A's!</a> </h2>  example of how to link to another page -- through it's route -->
         <!-- form data gets processed by "/results." Note the "name" of each input and how it's referenced in the "/results" handler -->
-      </form>
+
     </div>
 
     <!-- imports all script files including project's script.js file, jQuery, and bootstrap script files -->
@@ -53,5 +57,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/texthandler.js"></script>
   </body>
 </html>
