@@ -1,7 +1,3 @@
-# OAK CSSI 2019 Final Project
-Welcome to our Final Project! We will add more info here about what our project is about when we get further into development.
-
-Link to Deployed Version: TBA
 
 
 # Files
@@ -22,9 +18,3 @@ To start the server:
 
 To stop server:
 1) In terminal press **Control + C**
-
-## Developers
-- Name
-- Name
-- Name
-- Name
